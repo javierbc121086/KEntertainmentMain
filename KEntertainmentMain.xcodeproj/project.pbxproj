@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1214F40723BA10CC00106BF6 /* KDashboardViewControllerSearchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214F40623BA10CC00106BF6 /* KDashboardViewControllerSearchExtension.swift */; };
 		1214F40923BA2E4100106BF6 /* KDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214F40823BA2E4100106BF6 /* KDetailViewController.swift */; };
+		1214F40C23BAB36700106BF6 /* CacheImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214F40B23BAB36700106BF6 /* CacheImageRow.swift */; };
 		129D8D5923B99A6F0016664D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D8D5823B99A6F0016664D /* AppDelegate.swift */; };
 		129D8D6323B99A6F0016664D /* KEntertainmentMain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 129D8D6123B99A6F0016664D /* KEntertainmentMain.xcdatamodeld */; };
 		129D8D6523B99A710016664D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 129D8D6423B99A710016664D /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		0D6062C5A56B6D14BF883FF3 /* Pods-KEntertainmentMainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KEntertainmentMainTests.release.xcconfig"; path = "Target Support Files/Pods-KEntertainmentMainTests/Pods-KEntertainmentMainTests.release.xcconfig"; sourceTree = "<group>"; };
 		1214F40623BA10CC00106BF6 /* KDashboardViewControllerSearchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDashboardViewControllerSearchExtension.swift; sourceTree = "<group>"; };
 		1214F40823BA2E4100106BF6 /* KDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDetailViewController.swift; sourceTree = "<group>"; };
+		1214F40B23BAB36700106BF6 /* CacheImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImageRow.swift; sourceTree = "<group>"; };
 		129D8D5523B99A6F0016664D /* KEntertainmentMain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KEntertainmentMain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		129D8D5823B99A6F0016664D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		129D8D6223B99A6F0016664D /* KEntertainmentMain.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KEntertainmentMain.xcdatamodel; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1214F40A23BAB27F00106BF6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				1214F40B23BAB36700106BF6 /* CacheImageRow.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		129D8D4C23B99A6F0016664D = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +184,7 @@
 		129D8D5723B99A6F0016664D /* KEntertainmentMain */ = {
 			isa = PBXGroup;
 			children = (
+				1214F40A23BAB27F00106BF6 /* Tools */,
 				12C798F323B9E40C009A1388 /* Model */,
 				129D8D9623B99DE00016664D /* Manager */,
 				129D8D8C23B99B860016664D /* Enum */,
@@ -749,6 +760,7 @@
 				129D8D9523B99D120016664D /* KMovieModelExtension.swift in Sources */,
 				12C798F123B9E381009A1388 /* KVerticalContainerTableViewCell.swift in Sources */,
 				129D8D8E23B99B9F0016664D /* GHViewControllerType.swift in Sources */,
+				1214F40C23BAB36700106BF6 /* CacheImageRow.swift in Sources */,
 				129D8D6323B99A6F0016664D /* KEntertainmentMain.xcdatamodeld in Sources */,
 				129D8D9E23B99E5B0016664D /* GHBundleParameters.swift in Sources */,
 				12C7990E23B9FD1F009A1388 /* KTvModelExtension.swift in Sources */,

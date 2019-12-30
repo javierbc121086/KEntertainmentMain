@@ -32,6 +32,12 @@ class KDashboardViewController: GHBaseViewController {
         _entertainmentProcess?.getListEntertainment()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.helperControllerManager?.setNavBarHiden(hidden: true)
+    }
+    
     override func removeReferenceContext() {
         self.genericList.removeReferenceContext()
         

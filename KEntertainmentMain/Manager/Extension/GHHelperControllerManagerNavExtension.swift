@@ -31,19 +31,23 @@ extension GHHelperControllerManager {
         }
     }
     
+    func setLightStile() {
+        self.navigationController?.navigationBar.barStyle = .black
+    }
+    
     func setCustomNavigationBarStyle(nav: UINavigationController?) {
         self.navigationController = nav
         
         self.navigationController?.navigationBar.barStyle     = .default
-        self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = .clear
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.clear]
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.shadowImage          = UIImage(named: "fix_back")
-        self.navigationController?.navigationBar.isTranslucent        = false
-        self.navigationController?.navigationBar.isOpaque             = false
+        self.navigationController?.navigationBar.isTranslucent        = true
+        self.navigationController?.navigationBar.isOpaque             = true
         
-        self.navigationController?.toolbar.tintColor          = .white
-        self.navigationController?.toolbar.barTintColor       = .white
+        self.navigationController?.toolbar.tintColor          = .clear
+        self.navigationController?.toolbar.barTintColor       = .clear
         self.navigationController?.toolbar.isOpaque           = false
         
         self.navigationController?.isNavigationBarHidden = true

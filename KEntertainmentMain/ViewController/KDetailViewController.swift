@@ -28,6 +28,15 @@ class KDetailViewController: GHBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setGradientBackground()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.helperControllerManager?.setNavBarHiden(hidden: false)
+        self.helperControllerManager?.setLightStile()
+        
         self.model = self.bundle?.get("kmodel")
         
         if let movieModel = self.model as? KMovieModel {
@@ -36,8 +45,6 @@ class KDetailViewController: GHBaseViewController {
         else if let tvModel = self.model as? KTvModel {
             self.makeTvData(model: tvModel)
         }
-        
-        self.setGradientBackground()
     }
     
     func setGradientBackground() {
@@ -77,106 +84,15 @@ class KDetailViewController: GHBaseViewController {
 
 extension KDetailViewController {
     public func setMovieImage(model: KMovieModel) {
-        if !model.isVerified {
-            if model.posterPath.isNotEmpty {
-                if let url = URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)") {
-                    let config = URLSessionConfiguration.default
-                    
-                    let task = URLSession(configuration: config).dataTask(with: url, completionHandler:
-                    { (data: Data?, response: URLResponse?, error: Error?) in
-                        
-                        DispatchQueue.main.async(execute: {
-                            if let _ = error {
-                                self.setMovieDataToImage(data: model, verified: true, image: nil)
-                                return
-                            }
-                            
-                            if let dt = data {
-                                if let image = UIImage(data: dt) {
-                                    DispatchQueue.main.async(execute: {
-                                        self.setMovieDataToImage(data: model, verified: true, image: image)
-                                    })
-                                }
-                            }
-                        })
-                    })
-                    
-                    task.resume()
-                }
-            }
-            else {
-                self.setMovieDataToImage(data: model, verified: true, image: nil)
-            }
-        }
-        else {
-            if let img = model.PosterImage {
-                self.backImageView.image = nil
-                self.backImageView.image = img
-            }
-            else {
-                self.backImageView.image = nil
-                self.backImageView.image = UIImage()
-            }
-        }
-    }
-    
-    private func setMovieDataToImage(data: KMovieModel, verified: Bool, image: UIImage?) {
-        var dt = data
-        dt.isVerified = verified
-        self.backImageView.image = nil
-        self.backImageView.image = image ?? UIImage()
+        CacheImageRow.shared.setImageCahce(urlPath: URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)"),
+                                           key: "https://image.tmdb.org/t/p/w500\(model.posterPath)", imageView: self.backImageView)
     }
 }
 
 extension KDetailViewController {
     public func setTvImage(model: KTvModel) {
-        if !model.isVerified {
-            if model.posterPath.isNotEmpty {
-                if let url = URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)") {
-                    let config = URLSessionConfiguration.default
-                    
-                    let task = URLSession(configuration: config).dataTask(with: url, completionHandler:
-                    { (data: Data?, response: URLResponse?, error: Error?) in
-                        
-                        DispatchQueue.main.async(execute: {
-                            if let _ = error {
-                                self.setTvDataToImage(data: model, verified: true, image: nil)
-                                return
-                            }
-                            
-                            if let dt = data {
-                                if let image = UIImage(data: dt) {
-                                    DispatchQueue.main.async(execute: {
-                                        self.setTvDataToImage(data: model, verified: true, image: image)
-                                    })
-                                }
-                            }
-                        })
-                    })
-                    
-                    task.resume()
-                }
-            }
-            else {
-                self.setTvDataToImage(data: model, verified: true, image: nil)
-            }
-        }
-        else {
-            if let img = model.PosterImage {
-                self.backImageView.image = nil
-                self.backImageView.image = img
-            }
-            else {
-                self.backImageView.image = nil
-                self.backImageView.image = UIImage()
-            }
-        }
-    }
-    
-    private func setTvDataToImage(data: KTvModel, verified: Bool, image: UIImage?) {
-        var dt = data
-        dt.isVerified = verified
-        self.backImageView.image = nil
-        self.backImageView.image = image ?? UIImage()
+        CacheImageRow.shared.setImageCahce(urlPath: URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)"),
+                                           key: "https://image.tmdb.org/t/p/w500\(model.posterPath)", imageView: self.backImageView)
+        
     }
 }
