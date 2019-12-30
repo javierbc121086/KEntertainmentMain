@@ -1,0 +1,6 @@
+framework module Pods_KEntertainmentMain_KEntertainmentMainUITests {
+  umbrella header "Pods-KEntertainmentMain-KEntertainmentMainUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
