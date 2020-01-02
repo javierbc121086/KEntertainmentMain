@@ -6,6 +6,7 @@ source 'git@gitlab.com:GonetGrupo/iOS/Dependencies/Spects/GNSwissRazorSpec.git'
 source 'git@github.com:javierbc121086/KEntertainmentDomainSpec.git'
 source 'git@github.com:javierbc121086/KEntertainmentServiceSpec.git'
 source 'git@github.com:javierbc121086/KEntertainmentProcessSpec.git'
+source 'git@github.com:javierbc121086/KEntertainmentDataSpec.git'
 
 target 'KEntertainmentMain' do
   use_frameworks!

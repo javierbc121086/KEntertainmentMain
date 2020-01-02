@@ -85,14 +85,16 @@ class KDetailViewController: GHBaseViewController {
 extension KDetailViewController {
     public func setMovieImage(model: KMovieModel) {
         CacheImageRow.shared.setImageCahce(urlPath: URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)"),
-                                           key: "https://image.tmdb.org/t/p/w500\(model.posterPath)", imageView: self.backImageView)
+                                           key: model.posterPath,
+                                           imageView: self.backImageView)
     }
 }
 
 extension KDetailViewController {
     public func setTvImage(model: KTvModel) {
         CacheImageRow.shared.setImageCahce(urlPath: URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)"),
-                                           key: "https://image.tmdb.org/t/p/w500\(model.posterPath)", imageView: self.backImageView)
+                                           key: model.posterPath,
+                                           imageView: self.backImageView)
         
     }
 }

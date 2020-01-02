@@ -3,19 +3,24 @@ PODS:
     - GNSwissRazor
     - ReachabilitySwift (~> 4.1.0)
   - GNSwissRazor (0.1.1.0)
-  - KEntertainmentDomain (0.0.1)
-  - KEntertainmentProcess (0.0.2):
+  - KEntertainmentDomain (0.0.2)
+  - KEntertainmentProcess (0.0.6):
     - KEntertainmentService
-  - KEntertainmentService (0.0.1):
+    - RPEntertainmentData
+  - KEntertainmentService (0.0.2):
     - GNNetworkServices
     - GNSwissRazor
     - KEntertainmentDomain
   - ReachabilitySwift (4.1.0)
+  - RPEntertainmentData (0.0.11):
+    - KEntertainmentDomain
 
 DEPENDENCIES:
   - KEntertainmentProcess
 
 SPEC REPOS:
+  "git@github.com:javierbc121086/KEntertainmentDataSpec.git":
+    - RPEntertainmentData
   "git@github.com:javierbc121086/KEntertainmentDomainSpec.git":
     - KEntertainmentDomain
   "git@github.com:javierbc121086/KEntertainmentProcessSpec.git":
@@ -32,11 +37,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   GNNetworkServices: f0789fa2e967571a73f92c5d666d8985143af40f
   GNSwissRazor: 81fafbc345360d3f4c4e30bf042964950f7ed88d
-  KEntertainmentDomain: 63a2a0696dad6cdfbf1e970ea0e14550025a1f48
-  KEntertainmentProcess: 324abda82706b56f0661319774fdc0b4ddc69a8a
-  KEntertainmentService: 07a88f8bbbb98cec076e91ff493e0ed3a005e5d7
+  KEntertainmentDomain: 5528449f95ae5ae93b22e9b9df9a4f668c6b9779
+  KEntertainmentProcess: bfd456889a8928005b84c8b634c899d612b1c384
+  KEntertainmentService: da7aa8cfc5c44adef8695ddd838c35e473ca91b6
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  RPEntertainmentData: 480e7998e82f452bad9016ab482a29462ae9edbb
 
-PODFILE CHECKSUM: 47338250dd337c575225ea2402032b1a82a5f39c
+PODFILE CHECKSUM: 12753b03cb3e2b23e8de9884c9c495492a25811e
 
 COCOAPODS: 1.8.1

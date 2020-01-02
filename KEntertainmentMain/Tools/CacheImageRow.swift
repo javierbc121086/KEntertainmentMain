@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GNNetworkServices
+import RPEntertainmentData
 
 final class CacheImageRow {
     static let shared = CacheImageRow()
@@ -16,6 +18,14 @@ final class CacheImageRow {
     public func setImageCahce(urlPath: URL?, key: String, imageView: UIImageView) {
         if let image = CacheImageRow.shared.dict[key] {
             imageView.image = image
+            return
+        }
+        
+        if !GNDependencySeriveConfig.getStatusNetwork() {
+            let storageImage = KDataWrapper.shared.fetchImage(imageName: key)
+            CacheImageRow.shared.dict.updateValue(storageImage ?? UIImage(), forKey: key)
+            imageView.image = storageImage
+            return
         }
         
         guard let url = urlPath else {
@@ -29,8 +39,15 @@ final class CacheImageRow {
                     { (data: Data?, response: URLResponse?, error: Error?) in
                               
                         DispatchQueue.main.async(execute: {
+                            if let _ = error {
+                                CacheImageRow.shared.dict.updateValue(UIImage(), forKey: key)
+                                return
+                            }
+                            
                             if let dt = data, let remoteImage = UIImage(data: dt) {
                                 CacheImageRow.shared.dict.updateValue(remoteImage, forKey: key)
+                                KDataWrapper.shared.deleteImage(imageName: key)
+                                _ = KDataWrapper.shared.saveImage(image: remoteImage, name: key)
                                 imageView.image = remoteImage
                             }
                         })

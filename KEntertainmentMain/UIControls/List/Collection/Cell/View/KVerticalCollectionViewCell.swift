@@ -53,13 +53,15 @@ extension KVerticalCollectionViewCell: CollectionViewCellDelegate {
 extension KVerticalCollectionViewCell {
     public func setMovieImage(model: KMovieModel) {
         CacheImageRow.shared.setImageCahce(urlPath: URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)"),
-                                           key: "https://image.tmdb.org/t/p/w500\(model.posterPath)", imageView: self.posterImageView)
+                                           key: model.posterPath,
+                                           imageView: self.posterImageView)
     }
 }
 
 extension KVerticalCollectionViewCell {
     public func setTvImage(model: KTvModel) {
         CacheImageRow.shared.setImageCahce(urlPath: URL(string: "https://image.tmdb.org/t/p/w500\(model.posterPath)"),
-                                           key: "https://image.tmdb.org/t/p/w500\(model.posterPath)", imageView: self.posterImageView)
+                                           key: model.posterPath,
+                                           imageView: self.posterImageView)
     }
 }
