@@ -21,19 +21,19 @@ Se crearon 4 dependencias Pods que pertenecen al contexto Kavak Entertainment
 
 Capa o dependencia de la aplicación encargada de encapsular y exponer los modelos del negocio y tipos complejos reutilizables entre las capas o la aplicación principal.
 
-1. KEntertainmentService
+2. KEntertainmentService
 
 Capa o dependencia encargada de consumir servicios a web services, su unica función es solicitar información de servidores remotos, y procesar las respuestas para convertir entidades a modelos y exponerlos por medio del patron delegado.
 
-2. KEntertainmentData
+3. KEntertainmentData
 
 Capa encargada de persistir información compleja sobre Core Data y FileManager. Se ocupa en el contexto de Kavak Entertainment para poder almacenar y recuperar la lista de peliculas y tv shows junto con las imagenes remotas descargadas en caso de que el dispositivo no cuente con una conexión valida de datos móviles.
 
-3. KEntertainmentProcess
+4. KEntertainmentProcess
 
 Capa encargada de coordinar las petciones a web services o recuperacion de datos en cache o persistencia, comunmente se conoce como Presenter o ViewModel
 
-4. KEntertainmentMain
+5. KEntertainmentMain
 
 Aplicación principal Kavak Entertainment, donde se implementan los Pods KEntertainmentDomain, KEntertainmentService, KEntertainmentData y KEntertainmentProcess.
 
