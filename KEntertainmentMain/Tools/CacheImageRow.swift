@@ -15,7 +15,9 @@ final class CacheImageRow {
     private init() { }
     var dict = [String: UIImage]()
     
-    public func setImageCahce(urlPath: URL?, key: String, imageView: UIImageView) {
+    public func setImageCahce(key: String, imageView: UIImageView) {
+        imageView.image = nil
+        
         if let image = CacheImageRow.shared.dict[key] {
             imageView.image = image
             return
@@ -28,7 +30,7 @@ final class CacheImageRow {
             return
         }
         
-        guard let url = urlPath else {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(key)") else {
             CacheImageRow.shared.dict.updateValue(UIImage(), forKey: key)
             imageView.image = UIImage()
             return
