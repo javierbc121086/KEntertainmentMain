@@ -25,15 +25,15 @@ Capa o dependencia de la aplicación encargada de encapsular y exponer los model
 
 Capa o dependencia encargada de consumir servicios a web services, su unica función es solicitar información de servidores remotos, y procesar las respuestas para convertir entidades a modelos y exponerlos por medio del patron delegado.
 
-1. KEntertainmentData
+2. KEntertainmentData
 
 Capa encargada de persistir información compleja sobre Core Data y FileManager. Se ocupa en el contexto de Kavak Entertainment para poder almacenar y recuperar la lista de peliculas y tv shows junto con las imagenes remotas descargadas en caso de que el dispositivo no cuente con una conexión valida de datos móviles.
 
-1. KEntertainmentProcess
+3. KEntertainmentProcess
 
 Capa encargada de coordinar las petciones a web services o recuperacion de datos en cache o persistencia, comunmente se conoce como Presenter o ViewModel
 
-1. KEntertainmentMain
+4. KEntertainmentMain
 
 Aplicación principal Kavak Entertainment, donde se implementan los Pods KEntertainmentDomain, KEntertainmentService, KEntertainmentData y KEntertainmentProcess.
 
@@ -73,7 +73,7 @@ A. Se implementaron patrones de diseño de software sonre la capa service, las c
 
 Sobre el cascarón de la aplicación (KEntertainmentMain) se implemento:
 
-1. Strategy
+3. Strategy
 
 El patrón de diseño de software  sobre la logica de la table view y la collection view, al evitar cargar rows diferentes acoplando un if/else o switch (Se puede analizar su implementación sobre el proyecto).
 
